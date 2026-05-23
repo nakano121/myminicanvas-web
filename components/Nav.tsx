@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export function Nav() {
@@ -24,11 +25,13 @@ export function Nav() {
       <nav className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 no-underline group">
-          <div className="w-8 h-8 bg-coral rounded-xl flex items-center justify-center shadow-sm shadow-coral/30 group-hover:shadow-md group-hover:shadow-coral/30 transition-shadow">
-            <svg className="w-4.5 h-4.5 text-white" fill="currentColor" viewBox="0 0 24 24" style={{ width: '18px', height: '18px' }}>
-              <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
-            </svg>
-          </div>
+          <Image
+            src="/app-icon.png"
+            alt="My Mini Canvas"
+            width={32}
+            height={32}
+            className="rounded-[9px] shadow-sm group-hover:shadow-md transition-shadow"
+          />
           <span className="text-[16px] font-bold text-ink tracking-tight">My Mini Canvas</span>
         </Link>
 

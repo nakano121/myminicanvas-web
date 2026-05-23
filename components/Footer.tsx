@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -8,8 +9,8 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-10 mb-10">
           {/* Brand */}
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 mb-3">
-              <span className="text-xl">🌙</span>
+            <div className="flex items-center gap-2.5 mb-3">
+              <Image src="/app-icon.png" alt="My Mini Canvas" width={28} height={28} className="rounded-[8px]" />
               <span className="text-white font-semibold text-[17px]">My Mini Canvas</span>
             </div>
             <p className="text-sm leading-relaxed max-w-xs">

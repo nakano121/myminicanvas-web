@@ -306,39 +306,64 @@ function TrustTicker() {
 /* ─────────────────────────── FEATURES ─────────────────────────── */
 
 function Features() {
-  const features = [
+  const features: { icon: React.ReactNode; accent: string; title: string; desc: string }[] = [
     {
-      icon: "📸",
+      icon: (
+        <svg className="w-6 h-6 text-coral" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />
+          <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
+        </svg>
+      ),
       accent: "bg-coral",
       title: "Photograph the drawing",
       desc: "Snap it from your camera roll or take one now. Any crayon scribble or finger-paint masterpiece — if they made it, it matters.",
     },
     {
-      icon: "🎙️",
+      icon: (
+        <svg className="w-6 h-6 text-honey" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
+        </svg>
+      ),
       accent: "bg-honey",
       title: "Record their voice",
       desc: "Hit record as they explain what they drew. A three-year-old's narration of their scribble is the funniest, purest thing you'll ever hear.",
     },
     {
-      icon: "✨",
+      icon: (
+        <svg className="w-6 h-6 text-sage" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
+        </svg>
+      ),
       accent: "bg-sage",
       title: "AI writes a bedtime story",
       desc: "Claude AI reads their description and writes a personalised story — featuring their own character, details, and world.",
     },
     {
-      icon: "🖼️",
+      icon: (
+        <svg className="w-6 h-6 text-coral" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+        </svg>
+      ),
       accent: "bg-coral",
       title: "Generate an illustration",
       desc: "AI brings the story to life with a storybook illustration. The kind they'd hang on a gallery wall, if galleries had walls for four-year-olds.",
     },
     {
-      icon: "🌙",
+      icon: (
+        <svg className="w-6 h-6 text-honey" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"/>
+        </svg>
+      ),
       accent: "bg-honey",
       title: "Read it at bedtime",
       desc: "Dim the room. The app reads the story aloud with word-by-word highlighting. No screen-time guilt — it's their story.",
     },
     {
-      icon: "📖",
+      icon: (
+        <svg className="w-6 h-6 text-sage" fill="none" stroke="currentColor" strokeWidth={1.8} viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+        </svg>
+      ),
       accent: "bg-sage",
       title: "Export a keepsake PDF",
       desc: "Export a beautiful storybook PDF — or your entire Memory Book — to share with grandparents, print, or treasure forever.",
@@ -366,9 +391,11 @@ function Features() {
               key={f.title}
               className="group bg-parchment rounded-3xl overflow-hidden hover:shadow-lg hover:-translate-y-1 transition-all duration-300"
             >
-              <div className={`h-1 ${f.accent}`} />
+              <div className={`h-[3px] ${f.accent}`} />
               <div className="p-7">
-                <div className="text-3xl mb-5">{f.icon}</div>
+                <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center mb-5 shadow-sm border border-ink/5">
+                  {f.icon}
+                </div>
                 <h3 className="font-bold text-ink text-lg mb-2.5">{f.title}</h3>
                 <p className="text-muted text-[15px] leading-relaxed">{f.desc}</p>
               </div>
