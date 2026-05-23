@@ -2,9 +2,9 @@
 @plugin "@tailwindcss/typography";
 
 @theme {
-  --color-coral:          #0D9488;
-  --color-coral-light:    #CCEFED;
-  --color-coral-dark:     #0A7A72;
+  --color-coral:          #E8572D;
+  --color-coral-light:    #FDE8DF;
+  --color-coral-dark:     #C03E18;
   --color-sage:           #6B9678;
   --color-sage-light:     #E8F0EA;
   --color-honey:          #F0A130;
