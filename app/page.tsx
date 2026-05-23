@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, type PostMeta } from "@/lib/posts";
 import { WaitlistForm } from "@/components/WaitlistForm";
+import { AppPreview } from "@/components/AppPreview";
 
 export const metadata: Metadata = {
   title: "My Mini Canvas — Little Art, Big Stories",
@@ -17,6 +18,7 @@ export default async function HomePage() {
     <>
       <Hero />
       <TrustTicker />
+      <AppPreview />
       <Features />
       <HowItWorks />
       <PrivacyBadge />
