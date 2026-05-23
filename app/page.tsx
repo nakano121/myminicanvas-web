@@ -207,7 +207,7 @@ function Hero() {
                 href="#waitlist"
                 className="bg-coral text-white font-bold text-base px-8 py-4 rounded-full hover:bg-coral-dark active:scale-95 transition-all shadow-lg shadow-coral/30 whitespace-nowrap"
               >
-                Get Early Access — It&apos;s Free
+                Save Their Story — It&apos;s Free
               </a>
               <a
                 href="#how-it-works"
@@ -222,7 +222,7 @@ function Hero() {
 
             {/* Social proof micro-line */}
             <p className="animate-fade-slide-up delay-400 text-sm text-muted/70">
-              🔒 No account needed &nbsp;·&nbsp; 📱 100% on-device &nbsp;·&nbsp; 🆓 Free to join waitlist
+              🔒 Their drawings stay private &nbsp;·&nbsp; 📱 No cloud, no accounts &nbsp;·&nbsp; 🆓 Free to start
             </p>
           </div>
 
@@ -279,14 +279,14 @@ function Hero() {
 
 function TrustTicker() {
   const items = [
-    { icon: "🔒", text: "No accounts ever" },
-    { icon: "📱", text: "Stays on your device" },
-    { icon: "🎙️", text: "Voice never leaves device" },
-    { icon: "👶", text: "No child data transmitted" },
-    { icon: "☁️", text: "No cloud required" },
-    { icon: "🛡️", text: "COPPA-aware design" },
-    { icon: "✓", text: "GDPR-friendly" },
-    { icon: "🇸🇬", text: "Singapore-based company" },
+    { icon: "🔒", text: "Only you can see their art" },
+    { icon: "📱", text: "Lives on your phone, nowhere else" },
+    { icon: "🎙️", text: "Their voice never leaves your device" },
+    { icon: "👶", text: "No child data — ever" },
+    { icon: "☁️", text: "No cloud, no strangers, no risk" },
+    { icon: "🛡️", text: "Delete a memory — it's truly gone" },
+    { icon: "✓", text: "No account to create. Ever." },
+    { icon: "❤️", text: "Built by a parent, for parents" },
   ];
   const doubled = [...items, ...items];
 
@@ -317,8 +317,8 @@ function Features() {
         </svg>
       ),
       accent: "bg-coral",
-      title: "Photograph the drawing",
-      desc: "Snap it from your camera roll or take one now. Any crayon scribble or finger-paint masterpiece — if they made it, it matters.",
+      title: "Hold the drawing still",
+      desc: "Snap it before it gets folded into a pocket or lost under the bed. Every children's drawing they make deserves a place that isn't the recycling bin.",
     },
     {
       icon: (
@@ -327,8 +327,8 @@ function Features() {
         </svg>
       ),
       accent: "bg-honey",
-      title: "Record their voice",
-      desc: "Hit record as they explain what they drew. A three-year-old's narration of their scribble is the funniest, purest thing you'll ever hear.",
+      title: "Catch the explanation",
+      desc: "One tap, then let them talk. That child voice recording — the squeaky, breathless, completely illogical one — is the thing you'll miss most in twenty years.",
     },
     {
       icon: (
@@ -337,8 +337,8 @@ function Features() {
         </svg>
       ),
       accent: "bg-sage",
-      title: "AI writes a bedtime story",
-      desc: "Claude AI reads their description and writes a personalised story — featuring their own character, details, and world.",
+      title: "Their words become a story",
+      desc: "Their voice recording and kids art come together — and out comes a warm, personal bedtime story built entirely around the world they imagined.",
     },
     {
       icon: (
@@ -347,8 +347,8 @@ function Features() {
         </svg>
       ),
       accent: "bg-coral",
-      title: "Generate an illustration",
-      desc: "AI brings the story to life with a storybook illustration. The kind they'd hang on a gallery wall, if galleries had walls for four-year-olds.",
+      title: "Watch it become a storybook",
+      desc: "Their drawing blooms into a proper storybook illustration — warm watercolours, soft lines — the kind children's books are made of. With your consent, it's breathtaking.",
     },
     {
       icon: (
@@ -357,8 +357,8 @@ function Features() {
         </svg>
       ),
       accent: "bg-honey",
-      title: "Read it at bedtime",
-      desc: "Dim the room. The app reads the story aloud with word-by-word highlighting. No screen-time guilt — it's their story.",
+      title: "One last story before sleep",
+      desc: "Dim the room. Their story reads itself aloud, word by word, while they curl in close. No screen-time guilt. It's their story — they wrote it.",
     },
     {
       icon: (
@@ -367,8 +367,8 @@ function Features() {
         </svg>
       ),
       accent: "bg-sage",
-      title: "Export a keepsake PDF",
-      desc: "Export a beautiful storybook PDF — or your entire Memory Book — to share with grandparents, print, or treasure forever.",
+      title: "A keepsake they'll open at 30",
+      desc: "Export a storybook PDF to preserve children's artwork — or share the whole Memory Book with grandparents who live too far away. Print it. Frame it. Keep it.",
     },
   ];
 
@@ -376,14 +376,14 @@ function Features() {
     <section id="features" className="py-28 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-coral font-semibold text-sm uppercase tracking-widest">What it does</span>
+          <span className="text-coral font-semibold text-sm uppercase tracking-widest">Six moments that matter</span>
           <h2 className="mt-3 font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight mt-4">
-            Everything you need.
+            The whole story.
             <br />
-            Nothing you don&apos;t.
+            Saved forever.
           </h2>
           <p className="mt-5 text-muted text-lg max-w-lg mx-auto leading-relaxed">
-            No subscriptions to manage. No cloud accounts to create. Just you, your child, and their art.
+            From the crayon in their hand to a storybook on your shelf — every step happens on your device, privately, just for your family.
           </p>
         </div>
 
@@ -421,8 +421,8 @@ function HowItWorks() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       ),
-      title: "Photograph any drawing",
-      desc: "From a crayon masterpiece to a finger-paint abstract — it doesn't matter what it is. It matters that they made it.",
+      title: "Before it gets crumpled",
+      desc: "That fresh children's drawing on the kitchen table — before it gets folded into a pocket or lost forever — takes one photo. That's it.",
     },
     {
       n: "02",
@@ -431,8 +431,8 @@ function HowItWorks() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z" />
         </svg>
       ),
-      title: "Record what they say",
-      desc: "One tap, then let them talk. The \"it's a rocket but also a dog\" explanation you'll want to remember in twenty years.",
+      title: "Let them explain it",
+      desc: "Hit record, then step back. The \"it's a rocket but also a dog\" — that little voice, that impossible logic — is the family memory you didn't know you needed.",
     },
     {
       n: "03",
@@ -441,8 +441,8 @@ function HowItWorks() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       ),
-      title: "Watch a story appear",
-      desc: "My Mini Canvas turns their words into a warm, personal bedtime story — ready to read aloud, share, or export as a beautiful PDF.",
+      title: "Tonight's bedtime story",
+      desc: "Their words and their drawing come together — and out comes a real storybook, ready to read aloud, share with grandparents, or export as a beautiful keepsake PDF.",
     },
   ];
 
@@ -450,9 +450,9 @@ function HowItWorks() {
     <section id="how-it-works" className="py-28 px-6 bg-parchment-warm">
       <div className="max-w-5xl mx-auto">
         <div className="text-center mb-20">
-          <span className="text-coral font-semibold text-sm uppercase tracking-widest">How it works</span>
+          <span className="text-coral font-semibold text-sm uppercase tracking-widest">The magic, demystified</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight">
-            Three steps.
+            Three minutes.
             <br />
             One memory that lasts forever.
           </h2>
@@ -570,9 +570,9 @@ function Testimonials() {
     <section className="py-28 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-14">
-          <span className="text-coral font-semibold text-sm uppercase tracking-widest">Early families</span>
+          <span className="text-coral font-semibold text-sm uppercase tracking-widest">From families like yours</span>
           <h2 className="mt-4 font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight">
-            What parents are saying
+            They almost missed these moments too
           </h2>
         </div>
 
@@ -709,8 +709,7 @@ function FinalCTA() {
         </h2>
 
         <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          My Mini Canvas is launching on iPhone and iPad soon.
-          Join the waitlist — free, one email when we&apos;re live.
+          Right now, somewhere, they&apos;re drawing something extraordinary — and explaining it in a voice that won&apos;t sound like this forever. My Mini Canvas launches on iPhone and iPad soon. Join us — it&apos;s free, and one quiet email when we&apos;re ready.
         </p>
 
         <WaitlistForm dark />
