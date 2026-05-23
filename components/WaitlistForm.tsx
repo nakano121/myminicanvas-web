@@ -4,7 +4,7 @@ import { useState } from "react";
 
 // Replace LOOPS_FORM_ID with your actual ID from loops.so → Forms → Embed
 // Get it at: app.loops.so → Forms → create form → share → copy form ID
-const LOOPS_FORM_ENDPOINT = "https://app.loops.so/api/newsletter-form/LOOPS_FORM_ID";
+const LOOPS_FORM_ENDPOINT = "https://app.loops.so/api/newsletter-form/cmpiljy3q00k80jypvzt23nqx";
 
 type Status = "idle" | "loading" | "success" | "error";
 
