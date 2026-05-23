@@ -20,8 +20,8 @@ export function WaitlistForm({ dark = false }: { dark?: boolean }) {
     try {
       const res = await fetch(LOOPS_FORM_ENDPOINT, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: "userGroup=&mailingLists=&email=" + encodeURIComponent(email),
       });
 
       if (res.ok) {
