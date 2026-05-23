@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getAllPosts } from "@/lib/posts";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 export const metadata: Metadata = {
   title: "My Mini Canvas — Little Art, Big Stories",
@@ -404,30 +405,10 @@ function FinalCTA() {
           Join the waitlist and be first to know — plus get exclusive early access.
         </p>
 
-        {/* Waitlist form — simple mailto fallback until a form backend is wired */}
-        <form
-          action="mailto:hello@myminicanvas.com"
-          method="post"
-          encType="text/plain"
-          className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email address"
-            required
-            className="flex-1 px-5 py-4 rounded-full bg-white text-ink placeholder-muted/60 font-medium text-sm focus:outline-none focus:ring-2 focus:ring-white/50"
-          />
-          <button
-            type="submit"
-            className="bg-ink text-white font-bold px-7 py-4 rounded-full hover:bg-ink/90 active:scale-95 transition-all whitespace-nowrap"
-          >
-            Join Waitlist
-          </button>
-        </form>
+        <WaitlistForm dark />
 
         <p className="mt-5 text-white/50 text-xs">
-          No spam. We&apos;ll only email you when we launch. Unsubscribe anytime.
+          No spam. One email when we launch. Unsubscribe anytime.
         </p>
 
         {/* App Store badge coming soon */}

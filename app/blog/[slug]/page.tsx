@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPost } from "@/lib/posts";
+import { WaitlistForm } from "@/components/WaitlistForm";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -74,15 +75,10 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="mt-16 bg-coral rounded-3xl p-8 text-center text-white">
           <div className="text-3xl mb-3">🌙</div>
           <h3 className="text-xl font-black mb-2">Ready to start keeping their stories?</h3>
-          <p className="text-white/80 text-sm mb-5">
-            My Mini Canvas launches soon. Join the waitlist for early access.
+          <p className="text-white/80 text-sm mb-6">
+            My Mini Canvas launches soon. Join the waitlist — free, one email when we&apos;re live.
           </p>
-          <Link
-            href="/#waitlist"
-            className="inline-block bg-white text-coral font-bold text-sm px-7 py-3 rounded-full hover:bg-white/90 transition-colors no-underline"
-          >
-            Get Early Access
-          </Link>
+          <WaitlistForm dark />
         </div>
 
         {/* Back */}
