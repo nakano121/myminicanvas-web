@@ -1,0 +1,48 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-coral:     #E8572D;
+  --color-coral-light: #FDE8DF;
+  --color-sage:      #6B9678;
+  --color-sage-light: #E8F0EA;
+  --color-honey:     #F0A130;
+  --color-honey-light: #FEF0D4;
+  --color-parchment: #FAF4EB;
+  --color-ink:       #241F1C;
+  --color-muted:     #6D6058;
+  --color-surface:   #FFFFFF;
+
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  background-color: var(--color-parchment);
+  color: var(--color-ink);
+}
+
+/* Prose overrides for blog posts */
+.prose {
+  --tw-prose-body: var(--color-ink);
+  --tw-prose-headings: var(--color-ink);
+  --tw-prose-links: var(--color-coral);
+  --tw-prose-bold: var(--color-ink);
+  --tw-prose-hr: #e5e0da;
+  --tw-prose-quotes: var(--color-muted);
+  --tw-prose-quote-borders: var(--color-coral);
+}
