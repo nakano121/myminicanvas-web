@@ -221,9 +221,22 @@ function Hero() {
             </div>
 
             {/* Social proof micro-line */}
-            <p className="animate-fade-slide-up delay-400 text-sm text-muted/70">
-              🔒 Memories stay on your device &nbsp;·&nbsp; 📱 No accounts &nbsp;·&nbsp; 🆓 Free to start
-            </p>
+            <div className="animate-fade-slide-up delay-400 flex items-center gap-4 text-sm text-muted/70 flex-wrap">
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-sage" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 11c0-1.1.9-2 2-2s2 .9 2 2v2a2 2 0 01-2 2h0a2 2 0 01-2-2v-2zm-6 5V9a6 6 0 0112 0v7a3 3 0 01-3 3H9a3 3 0 01-3-3z"/></svg>
+                Memories stay on your device
+              </span>
+              <span className="text-muted/30">·</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-sage" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M18.364 5.636A9 9 0 105.636 18.364 9 9 0 0018.364 5.636zM9 10h.01M15 10h.01M9.5 15a4 4 0 005 0"/></svg>
+                No accounts
+              </span>
+              <span className="text-muted/30">·</span>
+              <span className="flex items-center gap-1.5">
+                <svg className="w-3.5 h-3.5 text-sage" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/></svg>
+                Free to start
+              </span>
+            </div>
           </div>
 
           {/* Right: phone */}
