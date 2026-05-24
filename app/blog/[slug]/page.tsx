@@ -73,7 +73,11 @@ export default async function BlogPostPage({ params }: Props) {
 
         {/* CTA */}
         <div className="mt-16 bg-coral rounded-3xl p-8 text-center text-white">
-          <div className="text-3xl mb-3">🌙</div>
+          <div className="flex justify-center mb-3">
+            <svg className="w-8 h-8 text-white/90" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25"/>
+            </svg>
+          </div>
           <h3 className="text-xl font-black mb-2">Ready to start keeping their stories?</h3>
           <p className="text-white/80 text-sm mb-6">
             My Mini Canvas launches soon. Join the waitlist — free, one email when we&apos;re live.

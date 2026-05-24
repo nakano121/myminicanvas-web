@@ -61,7 +61,11 @@ export default function SupportPage() {
       <div className="max-w-3xl mx-auto px-6 py-14">
         {/* Contact first */}
         <div className="bg-coral rounded-3xl p-8 text-white mb-14 text-center">
-          <div className="text-3xl mb-3">💌</div>
+          <div className="flex justify-center mb-3">
+            <svg className="w-8 h-8 text-white/90" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 01-2.25 2.25h-15a2.25 2.25 0 01-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0019.5 4.5h-15a2.25 2.25 0 00-2.25 2.25m19.5 0v.243a2.25 2.25 0 01-1.07 1.916l-7.5 4.615a2.25 2.25 0 01-2.36 0L3.32 8.91a2.25 2.25 0 01-1.07-1.916V6.75"/>
+            </svg>
+          </div>
           <h2 className="text-xl font-black mb-2">Get in touch</h2>
           <p className="text-white/80 text-sm mb-5">
             Can&apos;t find your answer below? We respond to every email, usually within one business day.

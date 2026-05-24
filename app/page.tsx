@@ -290,16 +290,48 @@ function Hero() {
 
 /* ─────────────────────────── TRUST TICKER ─────────────────────────── */
 
+const TICKER_ICON_LOCK = (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <rect x="3" y="11" width="18" height="11" rx="2" strokeLinecap="round" strokeLinejoin="round"/>
+    <path strokeLinecap="round" strokeLinejoin="round" d="M7 11V7a5 5 0 0110 0v4"/>
+  </svg>
+);
+const TICKER_ICON_MIC = (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+  </svg>
+);
+const TICKER_ICON_SHIELD = (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+  </svg>
+);
+const TICKER_ICON_CHECK = (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7"/>
+  </svg>
+);
+const TICKER_ICON_HEART = (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+  </svg>
+);
+const TICKER_ICON_TRASH = (
+  <svg className="w-3.5 h-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+  </svg>
+);
+
 function TrustTicker() {
-  const items = [
-    { icon: "🔒", text: "Only you can see their art" },
-    { icon: "📱", text: "Lives on your phone, nowhere else" },
-    { icon: "🎙️", text: "Their voice never leaves your device" },
-    { icon: "👶", text: "No child data — ever" },
-    { icon: "☁️", text: "Your memories stay on your device" },
-    { icon: "🛡️", text: "Delete a memory — it's truly gone" },
-    { icon: "✓", text: "No account to create. Ever." },
-    { icon: "❤️", text: "Built by a parent, for parents" },
+  const items: { icon: React.ReactNode; text: string }[] = [
+    { icon: TICKER_ICON_LOCK,   text: "Only you can see their art" },
+    { icon: TICKER_ICON_CHECK,  text: "Lives on your phone, nowhere else" },
+    { icon: TICKER_ICON_MIC,    text: "Their voice never leaves your device" },
+    { icon: TICKER_ICON_SHIELD, text: "No child data — ever" },
+    { icon: TICKER_ICON_LOCK,   text: "Your memories stay on your device" },
+    { icon: TICKER_ICON_TRASH,  text: "Delete a memory — it's truly gone" },
+    { icon: TICKER_ICON_CHECK,  text: "No account to create. Ever." },
+    { icon: TICKER_ICON_HEART,  text: "Built by a parent, for parents" },
   ];
   const doubled = [...items, ...items];
 
@@ -307,8 +339,8 @@ function TrustTicker() {
     <div className="bg-ink py-4 overflow-hidden">
       <div className="flex animate-marquee whitespace-nowrap">
         {doubled.map((item, i) => (
-          <span key={i} className="inline-flex items-center gap-2 px-7 text-white/55 text-sm font-medium">
-            <span>{item.icon}</span>
+          <span key={i} className="inline-flex items-center gap-2 px-7 text-white/50 text-sm font-medium">
+            <span className="text-coral/60">{item.icon}</span>
             <span>{item.text}</span>
             <span className="ml-5 text-white/15">·</span>
           </span>
