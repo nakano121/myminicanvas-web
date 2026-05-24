@@ -14,11 +14,11 @@ const FAQ = [
   },
   {
     q: "Does the app require an internet connection?",
-    a: "For basic use — capturing drawings, recording voice, and storing memories — no internet connection is needed. AI story generation and illustration features require an internet connection and your own API key.",
+    a: "For basic use — capturing drawings, recording voice, and storing memories — no internet connection is needed. AI story generation and illustration features require an internet connection.",
   },
   {
     q: "Where is my data stored?",
-    a: "Everything is stored on your device. We have no access to your drawings, voice recordings, stories, or any other content you create. Nothing is uploaded to our servers.",
+    a: "Drawings, voice recordings, stories, and illustrations are stored on your device only. Optional AI features route the minimum necessary text through our secure server — never your drawings or audio. We have no persistent access to your content.",
   },
   {
     q: "Do I need to create an account?",
@@ -26,11 +26,11 @@ const FAQ = [
   },
   {
     q: "How does the AI story generation work?",
-    a: "When you tap 'Create Story', the drawing's title and your child's voice transcription (but never their name) is sent to Anthropic's Claude AI using your own API key. The story is returned and saved locally on your device. Your key is stored in your device's Keychain — not on our servers.",
+    a: "When you tap 'Create Story', the drawing's title and your child's voice transcription (but never their name) is sent via our secure server to Anthropic's Claude AI. The story is returned and saved locally on your device. No API key required — we handle that.",
   },
   {
-    q: "What is an API key and do I need one?",
-    a: "API keys are required for AI story and illustration features. You can get an Anthropic key at console.anthropic.com and an OpenAI key at platform.openai.com. Basic memory capture (drawing + voice + notes) works without any API key.",
+    q: "Do I need my own API key?",
+    a: "No. AI story generation, illustration, and read-aloud are powered by our server — you don't need an Anthropic or OpenAI account. Basic memory capture (drawing + voice + notes) works completely offline.",
   },
   {
     q: "Can I export my memories?",

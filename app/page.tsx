@@ -198,7 +198,7 @@ function Hero() {
             <p className="animate-fade-slide-up delay-200 text-lg text-muted leading-relaxed max-w-[480px]">
               My Mini Canvas captures your child&apos;s voice alongside every drawing —
               then turns it into a bedtime story and a keepsake book.
-              Privately. On your device. No cloud required.
+              Privately. On your device. AI features are optional and always ask first.
             </p>
 
             {/* CTAs */}
@@ -222,7 +222,7 @@ function Hero() {
 
             {/* Social proof micro-line */}
             <p className="animate-fade-slide-up delay-400 text-sm text-muted/70">
-              🔒 Their drawings stay private &nbsp;·&nbsp; 📱 No cloud, no accounts &nbsp;·&nbsp; 🆓 Free to start
+              🔒 Memories stay on your device &nbsp;·&nbsp; 📱 No accounts &nbsp;·&nbsp; 🆓 Free to start
             </p>
           </div>
 
@@ -283,7 +283,7 @@ function TrustTicker() {
     { icon: "📱", text: "Lives on your phone, nowhere else" },
     { icon: "🎙️", text: "Their voice never leaves your device" },
     { icon: "👶", text: "No child data — ever" },
-    { icon: "☁️", text: "No cloud, no strangers, no risk" },
+    { icon: "☁️", text: "Your memories stay on your device" },
     { icon: "🛡️", text: "Delete a memory — it's truly gone" },
     { icon: "✓", text: "No account to create. Ever." },
     { icon: "❤️", text: "Built by a parent, for parents" },
@@ -515,9 +515,9 @@ function PrivacyBadge() {
           Your family&apos;s memories stay<br />with your family.
         </h2>
         <p className="text-white/75 text-lg leading-relaxed max-w-2xl mx-auto mb-10">
-          No accounts. No cloud sync. No AI training on your child&apos;s data.
-          No analytics tracking. Everything lives on your device, under your control.
-          When you delete a memory, it&apos;s gone — not archived somewhere else.
+          No accounts. No analytics tracking. Drawings, voice recordings, and stories
+          live on your device. Optional AI features use our secure server — only when you ask,
+          only the minimum text required. When you delete a memory, it&apos;s gone — not archived somewhere else.
         </p>
 
         <div className="flex flex-wrap justify-center gap-3 mb-8">

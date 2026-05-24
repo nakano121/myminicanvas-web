@@ -65,21 +65,17 @@ export default function TermsPage() {
           </p>
           <p>
             When you use optional AI features (story generation or illustration generation), content
-            is processed by third-party AI providers using your own API key. You are responsible for
-            compliance with those providers&apos; terms of service.
+            is processed by third-party AI providers via our secure server. You are responsible for
+            compliance with those providers&apos; terms of service as they apply to content you submit.
           </p>
         </Section>
 
         <Section title="5. Third-party services">
           <p>
-            The App&apos;s optional AI features rely on third-party APIs (Anthropic Claude, OpenAI).
-            Your use of these features is governed by the respective providers&apos; terms of service
-            and privacy policies. We are not responsible for the actions, content, or policies of
-            third-party services.
-          </p>
-          <p>
-            API keys you provide are your responsibility. Keep them secure. We are not liable for
-            any costs or consequences arising from unauthorised use of your API keys.
+            The App&apos;s optional AI features rely on third-party APIs (Anthropic Claude, OpenAI),
+            accessed via our Cloudflare Workers server. Your use of these features is governed by
+            the respective providers&apos; terms of service and privacy policies. We are not responsible
+            for the actions, content, or policies of third-party services.
           </p>
         </Section>
 

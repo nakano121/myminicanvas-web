@@ -323,7 +323,7 @@ function BedtimeScreen() {
       <div className="flex-1 px-6 flex items-center">
         <p className="text-[11px] leading-[1.9] text-center text-white/75 font-light tracking-wide">
           Once upon a time, there was a little house who dreamed of touching the{" "}
-          <span className="text-coral font-bold">stars</span>
+          <span className="text-honey font-bold">stars</span>
           . Every night, while the other houses slept peacefully, this house gazed up at the moon and wondered what it would feel like to fly.
         </p>
       </div>
@@ -481,12 +481,15 @@ export function AppPreview() {
         </div>
 
         {/* Tabs */}
-        <div className="flex justify-center gap-2 mb-12 flex-wrap">
+        <div
+          className="flex gap-2 mb-12 overflow-x-auto pb-1"
+          style={{ justifyContent: 'safe center', scrollbarWidth: 'none', msOverflowStyle: 'none' } as React.CSSProperties}
+        >
           {TABS.map((tab, i) => (
             <button
               key={tab.id}
               onClick={() => { setActive(tab.id); setPaused(true); }}
-              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${
+              className={`flex items-center gap-2 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 whitespace-nowrap flex-shrink-0 ${
                 active === tab.id
                   ? "bg-coral text-white shadow-lg shadow-coral/30"
                   : "bg-white/8 text-white/50 hover:bg-white/15 hover:text-white/80"

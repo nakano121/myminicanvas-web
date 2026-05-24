@@ -23,8 +23,9 @@ export default function PrivacyPage() {
 
         <p className="text-lg font-medium text-ink">
           Your family&apos;s memories are private. That&apos;s not a promise — it&apos;s the architecture.
-          My Mini Canvas is built from the ground up so your children&apos;s data never needs
-          to leave your device.
+          Drawings, voice recordings, and stories are stored on your device. AI features
+          use a secure My Mini Canvas server — only when you explicitly ask, and only
+          the minimum text required.
         </p>
 
         <Section title="1. Who we are">
@@ -72,41 +73,50 @@ export default function PrivacyPage() {
             to any external service. PencilKit processing is entirely on-device.
           </p>
 
-          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Story Generation (optional feature)</h3>
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI features — how they work</h3>
           <p>
-            If you choose to use the AI story generation feature, the drawing title and any
-            transcript of what the child said may be sent to Anthropic&apos;s Claude API via
-            your own API key. The child&apos;s name is never transmitted. No image of the drawing
-            is sent. See Anthropic&apos;s Privacy Policy at{" "}
+            My Mini Canvas offers optional AI features (story generation, read-aloud, and
+            illustration). These features route through a secure My Mini Canvas server
+            (hosted on Cloudflare&apos;s infrastructure) before reaching the underlying AI providers.
+            We operate this server so you never need an Anthropic or OpenAI account.
+          </p>
+          <p>
+            Our server holds no persistent user data — it processes each request and discards it.
+            The only information retained is an anonymous per-device usage counter (no name,
+            no email, no account) used to enforce monthly rate limits.
+          </p>
+
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Story Generation (optional)</h3>
+          <p>
+            When you generate a story, the drawing&apos;s title, the child&apos;s spoken transcript
+            (if provided), and a resized thumbnail of the drawing are transmitted via our server
+            to Anthropic&apos;s Claude API. The child&apos;s name is never transmitted.
+            See Anthropic&apos;s Privacy Policy at{" "}
             <a href="https://www.anthropic.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               anthropic.com/privacy
             </a>.
           </p>
 
-          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional feature)</h3>
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional)</h3>
           <p>
-            If you choose to use the AI read-aloud feature, the saved story text may be sent to
-            OpenAI&apos;s Text-to-Speech API via your own API key to generate spoken audio. Only
-            the story text is transmitted — no child audio, no drawings, no personal identifiers.
-            See OpenAI&apos;s Privacy Policy at{" "}
+            When you use Read Aloud, the saved story text is transmitted via our server to
+            OpenAI&apos;s Text-to-Speech API. Only the story text is sent — no child audio,
+            no drawings, no personal identifiers. See OpenAI&apos;s Privacy Policy at{" "}
             <a href="https://openai.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               openai.com/privacy
             </a>.
           </p>
 
-          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Illustration Generation (optional feature)</h3>
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Illustration Generation (optional)</h3>
           <p>
-            If you choose to generate an illustration, a text prompt derived from the drawing title
-            and story is sent to OpenAI&apos;s image generation API via your own API key. No drawing
-            image, no child audio, and no personal identifiers are transmitted. The generated image
-            is reviewed by the parent before saving to the device.
-          </p>
-
-          <h3 className="font-bold text-ink text-lg mt-4 mb-2">API Keys</h3>
-          <p>
-            If you provide API keys for AI features, these are stored in your device&apos;s
-            Keychain with <code>kSecAttrAccessibleWhenUnlockedThisDeviceOnly</code>. They are not
-            backed up to iCloud and are not accessible to us.
+            When you generate an illustration, a text prompt derived from the drawing title and
+            story is transmitted via our server to OpenAI&apos;s image generation API. No drawing
+            image, no child audio, and no personal identifiers are transmitted. The generated
+            image is reviewed by the parent before saving to the device. See OpenAI&apos;s Privacy
+            Policy at{" "}
+            <a href="https://openai.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
+              openai.com/privacy
+            </a>.
           </p>
         </Section>
 
@@ -123,8 +133,8 @@ export default function PrivacyPage() {
           <ul className="list-disc pl-5 space-y-1">
             <li>We do not collect a child&apos;s name, photograph, voice recording, or any other personal identifier via our servers.</li>
             <li>All voice recordings, drawings (including Draw Together canvas drawings), stories, and illustrations are stored locally on the parent&apos;s device.</li>
-            <li>We do not transmit any children&apos;s content to third parties without explicit parental opt-in at the time of each action (see Section 2).</li>
-            <li>AI features require separate API keys provided by the parent. No AI processing occurs without the parent actively initiating it.</li>
+            <li>We do not transmit any children&apos;s content to AI services without explicit parental opt-in at the time of each action (see Section 2).</li>
+            <li>No AI processing occurs without the parent actively initiating it. AI features are always opt-in, never automatic.</li>
             <li>Voice recognition uses Apple&apos;s on-device framework only — child audio is never sent to any server.</li>
           </ul>
           <p>
@@ -174,9 +184,15 @@ export default function PrivacyPage() {
 
         <Section title="7. Security">
           <p>
-            Data is protected by your device&apos;s security model (Face ID, Touch ID, passcode).
-            API keys are stored in the iOS Keychain with device-level encryption. We recommend
-            enabling App Lock within the App and keeping your device&apos;s operating system up to date.
+            Data stored on your device is protected by your device&apos;s security model (Face ID,
+            Touch ID, passcode). We recommend enabling App Lock within the App and keeping your
+            device&apos;s operating system up to date.
+          </p>
+          <p>
+            AI requests are routed through our Cloudflare Workers server over HTTPS. The server
+            authenticates each request using an anonymous device token (SHA-256 of your device&apos;s
+            vendor identifier — no personal information). API keys for Anthropic and OpenAI are
+            stored exclusively as server-side secrets and never transmitted to or stored on your device.
           </p>
         </Section>
 
