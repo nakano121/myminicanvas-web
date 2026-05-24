@@ -2,9 +2,9 @@
 
 import { useState, useEffect } from "react";
 
-type Screen = "gallery" | "record" | "story" | "bedtime";
+type Screen = "gallery" | "record" | "story" | "bedtime" | "draw";
 
-const SCREENS: Screen[] = ["gallery", "record", "story", "bedtime"];
+const SCREENS: Screen[] = ["gallery", "record", "story", "bedtime", "draw"];
 
 const TABS = [
   {
@@ -34,6 +34,13 @@ const TABS = [
     desc: "Read it aloud together",
     subdesc:
       "Dim the room. A warm AI voice reads the story with word-by-word highlighting. No screen-time guilt — it's their story.",
+  },
+  {
+    id: "draw" as Screen,
+    label: "Draw",
+    desc: "Draw together on the canvas.",
+    subdesc:
+      "Open the built-in canvas and draw alongside your child with Apple Pencil or a finger. No app switch. No account. Saved straight to their memory.",
   },
 ];
 
@@ -332,6 +339,95 @@ function BedtimeScreen() {
   );
 }
 
+function DrawScreen() {
+  return (
+    <div className="flex flex-col h-full bg-white">
+      {/* Dynamic island */}
+      <div className="flex justify-center pt-3 pb-1 flex-shrink-0">
+        <div className="w-[100px] h-[28px] bg-ink rounded-full" />
+      </div>
+      {/* Nav */}
+      <div className="flex items-center justify-between px-4 pt-2 pb-2 flex-shrink-0 border-b border-ink/6">
+        <span className="text-[10px] text-muted font-medium">Cancel</span>
+        <p className="text-[12px] font-bold text-ink">Draw Together</p>
+        <span className="text-[10px] text-coral font-bold opacity-40">Use Drawing</span>
+      </div>
+
+      {/* Canvas */}
+      <div className="flex-1 relative overflow-hidden bg-white">
+        <svg viewBox="0 0 248 370" className="w-full h-full" fill="none">
+          {/* Sky */}
+          <rect width="248" height="370" fill="#F8F9FA" />
+          {/* Sun */}
+          <circle cx="208" cy="38" r="24" fill="#F0A130" opacity="0.88" />
+          {/* Clouds */}
+          <ellipse cx="54" cy="40" rx="26" ry="14" fill="#EEF3FF" />
+          <ellipse cx="70" cy="31" rx="19" ry="14" fill="#EEF3FF" />
+          <ellipse cx="37" cy="34" rx="17" ry="12" fill="#EEF3FF" />
+          {/* Ground */}
+          <rect x="0" y="298" width="248" height="72" fill="#6B9678" opacity="0.52" />
+          {/* House body */}
+          <rect x="62" y="188" width="124" height="118" fill="white" stroke="#E8572D" strokeWidth="3.5" />
+          {/* Roof */}
+          <polygon points="46,190 124,108 202,190" fill="#C03E18" />
+          {/* Door */}
+          <rect x="99" y="238" width="50" height="68" rx="25 25 0 0" fill="#8B6F5E" />
+          {/* Windows */}
+          <rect x="70" y="208" width="34" height="24" rx="4" fill="#B0D8F5" opacity="0.9" />
+          <rect x="144" y="208" width="34" height="24" rx="4" fill="#B0D8F5" opacity="0.9" />
+          {/* Rainbow */}
+          <path d="M8,294 Q124,96 240,294" stroke="#E8572D" strokeWidth="5.5" strokeLinecap="round" fill="none" />
+          <path d="M19,298 Q124,112 229,298" stroke="#F0A130" strokeWidth="4.5" strokeLinecap="round" fill="none" />
+          <path d="M30,302 Q124,128 218,302" stroke="#FFD93F" strokeWidth="4" strokeLinecap="round" fill="none" />
+          {/* Active blue stroke being drawn */}
+          <path
+            d="M48,172 Q72,138 100,154 Q124,167 148,147 Q168,130 192,150"
+            stroke="#4A9EE8" strokeWidth="4.5" fill="none" strokeLinecap="round" strokeLinejoin="round"
+          />
+        </svg>
+        {/* Active color indicator dot */}
+        <div className="absolute bottom-3 right-3 w-5 h-5 rounded-full border-[2.5px] border-white shadow-md" style={{ background: '#4A9EE8' }} />
+      </div>
+
+      {/* PencilKit toolbar */}
+      <div className="mx-2 mb-2 mt-1 bg-[#F5F5F5] rounded-xl flex items-center px-3 py-2 gap-2 flex-shrink-0 border border-ink/5">
+        {/* Tool icons */}
+        {[false, true, false].map((active, i) => (
+          <div key={i} className={`w-7 h-7 rounded-lg flex items-center justify-center ${active ? 'bg-[#4A9EE8]/15' : ''}`}>
+            <svg className="w-4 h-4" viewBox="0 0 20 20" fill="none">
+              {i === 0 && (
+                <path d="M15.5 2.5l2 2-11 11H4.5v-2l11-11z" stroke={active ? "#4A9EE8" : "#8B7E76"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              )}
+              {i === 1 && (
+                <>
+                  <path d="M3 16l5-5m0 0l7-7a2 2 0 012.8 2.8l-7 7" stroke={active ? "#4A9EE8" : "#8B7E76"} strokeWidth="1.5" strokeLinecap="round" />
+                  <path d="M8 11l-4 5" stroke={active ? "#4A9EE8" : "#8B7E76"} strokeWidth="1.5" strokeLinecap="round" />
+                </>
+              )}
+              {i === 2 && (
+                <path d="M4 12l4-4 4 4 4-4M2 17h16" stroke={active ? "#4A9EE8" : "#8B7E76"} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              )}
+            </svg>
+          </div>
+        ))}
+        <div className="w-px h-5 bg-ink/10 mx-0.5" />
+        {/* Color swatches */}
+        {['#E8572D', '#F0A130', '#4A9EE8', '#6B9678', '#241F1C'].map((color, i) => (
+          <div
+            key={i}
+            className="w-[17px] h-[17px] rounded-full flex-shrink-0"
+            style={{
+              background: color,
+              boxShadow: i === 2 ? `0 0 0 2px ${color}, 0 0 0 3.5px white, 0 0 0 4.5px ${color}` : 'none',
+              transform: i === 2 ? 'scale(1.2)' : 'scale(1)',
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function PhoneFrame({ screen, key: _ }: { screen: Screen; key: string }) {
   return (
     <div className="relative w-[268px] mx-auto">
@@ -343,6 +439,7 @@ function PhoneFrame({ screen, key: _ }: { screen: Screen; key: string }) {
             {screen === "record"   && <RecordScreen />}
             {screen === "story"    && <StoryScreen />}
             {screen === "bedtime"  && <BedtimeScreen />}
+            {screen === "draw"     && <DrawScreen />}
           </div>
         </div>
       </div>

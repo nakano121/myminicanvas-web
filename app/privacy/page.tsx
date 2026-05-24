@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://myminicanvas.com/privacy" },
 };
 
-const LAST_UPDATED = "23 May 2026";
+const LAST_UPDATED = "24 May 2026";
 
 export default function PrivacyPage() {
   return (
@@ -65,19 +65,41 @@ export default function PrivacyPage() {
             device and is never transmitted to Apple or any third party for transcription purposes.
           </p>
 
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">Draw Together (optional feature)</h3>
+          <p>
+            The App includes a built-in drawing canvas powered by Apple&apos;s PencilKit framework.
+            Drawings created on this canvas are stored only on your device and are never transmitted
+            to any external service. PencilKit processing is entirely on-device.
+          </p>
+
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Story Generation (optional feature)</h3>
           <p>
-            If you choose to use the AI story generation feature, a description of the drawing
-            (the parent&apos;s title and any transcript of what the child said) may be sent to
-            Anthropic&apos;s Claude API or OpenAI&apos;s API via your own API key. The child&apos;s
-            name is never transmitted. See Anthropic&apos;s Privacy Policy at{" "}
+            If you choose to use the AI story generation feature, the drawing title and any
+            transcript of what the child said may be sent to Anthropic&apos;s Claude API via
+            your own API key. The child&apos;s name is never transmitted. No image of the drawing
+            is sent. See Anthropic&apos;s Privacy Policy at{" "}
             <a href="https://www.anthropic.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               anthropic.com/privacy
-            </a>{" "}
-            and OpenAI&apos;s at{" "}
+            </a>.
+          </p>
+
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional feature)</h3>
+          <p>
+            If you choose to use the AI read-aloud feature, the saved story text may be sent to
+            OpenAI&apos;s Text-to-Speech API via your own API key to generate spoken audio. Only
+            the story text is transmitted — no child audio, no drawings, no personal identifiers.
+            See OpenAI&apos;s Privacy Policy at{" "}
             <a href="https://openai.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               openai.com/privacy
             </a>.
+          </p>
+
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Illustration Generation (optional feature)</h3>
+          <p>
+            If you choose to generate an illustration, a text prompt derived from the drawing title
+            and story is sent to OpenAI&apos;s image generation API via your own API key. No drawing
+            image, no child audio, and no personal identifiers are transmitted. The generated image
+            is reviewed by the parent before saving to the device.
           </p>
 
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">API Keys</h3>
@@ -91,16 +113,19 @@ export default function PrivacyPage() {
         <Section title="3. Children's privacy (COPPA compliance)">
           <p>
             My Mini Canvas is designed to be used by parents and caregivers on behalf of their
-            children. The App is not directed to children under 13. We do not knowingly collect
-            personal information from children under 13.
+            children. The App is not directed to children under 13 and children do not use it
+            independently — a parent or guardian controls all interactions. We do not knowingly
+            collect personal information from children under 13.
           </p>
           <p>
             In compliance with the Children&apos;s Online Privacy Protection Act (COPPA):
           </p>
           <ul className="list-disc pl-5 space-y-1">
             <li>We do not collect a child&apos;s name, photograph, voice recording, or any other personal identifier via our servers.</li>
-            <li>All voice recordings and drawings are stored locally on the parent&apos;s device.</li>
-            <li>We do not transmit children&apos;s content to any third party without parental consent via opt-in features (see Section 2).</li>
+            <li>All voice recordings, drawings (including Draw Together canvas drawings), stories, and illustrations are stored locally on the parent&apos;s device.</li>
+            <li>We do not transmit any children&apos;s content to third parties without explicit parental opt-in at the time of each action (see Section 2).</li>
+            <li>AI features require separate API keys provided by the parent. No AI processing occurs without the parent actively initiating it.</li>
+            <li>Voice recognition uses Apple&apos;s on-device framework only — child audio is never sent to any server.</li>
           </ul>
           <p>
             If you believe a child under 13 has provided us with personal information without
