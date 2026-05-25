@@ -197,7 +197,7 @@ function Hero() {
             {/* Subheadline */}
             <p className="animate-fade-slide-up delay-200 text-lg text-muted leading-relaxed max-w-[480px]">
               My Mini Canvas captures your child&apos;s voice alongside every drawing —
-              then turns it into a bedtime story and a keepsake book.
+              then turns it into an illustrated storybook and a keepsake book.
               Privately. On your device. AI features are optional and always ask first.
             </p>
 
@@ -383,7 +383,7 @@ function Features() {
       ),
       accent: "bg-sage",
       title: "Their words become a story",
-      desc: "Their voice recording and kids art come together — and out comes a warm, personal bedtime story built entirely around the world they imagined.",
+      desc: "Their voice recording and drawing come together — and out comes a warm, personal bedtime story. Save it, and an illustration begins painting itself automatically.",
     },
     {
       icon: (
@@ -393,7 +393,7 @@ function Features() {
       ),
       accent: "bg-coral",
       title: "Watch it become a storybook",
-      desc: "Their drawing blooms into a proper storybook illustration — warm watercolours, soft lines — the kind children's books are made of. With your consent, it's breathtaking.",
+      desc: "The moment you save the story, an illustration begins painting itself — warm watercolours, soft lines, the kind children's books are made of. One tap. Both done.",
     },
     {
       icon: (
@@ -486,8 +486,8 @@ function HowItWorks() {
           <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
         </svg>
       ),
-      title: "Tonight's bedtime story",
-      desc: "Their words and their drawing come together — and out comes a real storybook, ready to read aloud, share with grandparents, or export as a beautiful keepsake PDF.",
+      title: "Tonight's illustrated bedtime story",
+      desc: "Their words and drawing come together — and out comes a real illustrated storybook, ready to read aloud, share with grandparents, or export as a beautiful keepsake PDF.",
     },
   ];
 

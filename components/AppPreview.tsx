@@ -24,9 +24,9 @@ const TABS = [
   {
     id: "story" as Screen,
     label: "Story",
-    desc: "Their words become a bedtime story",
+    desc: "Their words become an illustrated story",
     subdesc:
-      "Claude AI writes a warm, personal story from their description — ready for you to review and save with one tap.",
+      "Claude AI writes a warm, personal story from their description. You review it, tap Save — and a matching illustration begins painting itself automatically.",
   },
   {
     id: "bedtime" as Screen,

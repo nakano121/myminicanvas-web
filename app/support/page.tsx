@@ -26,7 +26,7 @@ const FAQ = [
   },
   {
     q: "How does the AI story generation work?",
-    a: "When you tap 'Create Story', the drawing's title and your child's voice transcription (but never their name) is sent via our secure server to Anthropic's Claude AI. The story is returned and saved locally on your device. No API key required — we handle that.",
+    a: "When you tap 'Create Story', the drawing's title and your child's voice transcription (but never their name) is sent via our secure server to Anthropic's Claude AI. The story is returned for you to review. Once you save it, an illustration is painted automatically — no second tap needed. Everything is saved locally on your device. No API key required — we handle that.",
   },
   {
     q: "Do I need my own API key?",
