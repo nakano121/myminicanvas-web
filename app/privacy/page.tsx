@@ -75,10 +75,10 @@ export default function PrivacyPage() {
 
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI features — how they work</h3>
           <p>
-            My Mini Canvas offers optional AI features (story generation, read-aloud, and
-            illustration). These features route through a secure My Mini Canvas server
+            My Mini Canvas offers optional AI features (story generation, illustration, and
+            read-aloud). These features route through a secure My Mini Canvas server
             (hosted on Cloudflare&apos;s infrastructure) before reaching the underlying AI providers.
-            We operate this server so you never need an Anthropic or OpenAI account.
+            We operate this server so you never need accounts with any AI provider.
           </p>
           <p>
             Our server holds no persistent user data — it processes each request and discards it.
@@ -90,32 +90,33 @@ export default function PrivacyPage() {
           <p>
             When you generate a story, the drawing&apos;s title, the child&apos;s spoken transcript
             (if provided), and a resized thumbnail of the drawing are transmitted via our server
-            to Anthropic&apos;s Claude API. The child&apos;s name is never transmitted.
+            to <strong>Anthropic&apos;s Claude API</strong>. The child&apos;s name is never transmitted.
             See Anthropic&apos;s Privacy Policy at{" "}
             <a href="https://www.anthropic.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               anthropic.com/privacy
             </a>.
           </p>
 
-          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional)</h3>
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Illustration Generation (optional)</h3>
           <p>
-            When you use Read Aloud, the saved story text is transmitted via our server to
-            OpenAI&apos;s Text-to-Speech API. Only the story text is sent — no child audio,
-            no drawings, no personal identifiers. See OpenAI&apos;s Privacy Policy at{" "}
+            When you generate an illustration, a text prompt derived from the drawing title and
+            story is transmitted via our server to <strong>OpenAI&apos;s image generation API</strong>.
+            No drawing image, no child audio, and no personal identifiers are transmitted. The
+            generated image is reviewed by the parent before saving to the device. See OpenAI&apos;s
+            Privacy Policy at{" "}
             <a href="https://openai.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               openai.com/privacy
             </a>.
           </p>
 
-          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Illustration Generation (optional)</h3>
+          <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional)</h3>
           <p>
-            When you generate an illustration, a text prompt derived from the drawing title and
-            story is transmitted via our server to OpenAI&apos;s image generation API. No drawing
-            image, no child audio, and no personal identifiers are transmitted. The generated
-            image is reviewed by the parent before saving to the device. See OpenAI&apos;s Privacy
-            Policy at{" "}
-            <a href="https://openai.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
-              openai.com/privacy
+            When you use Read Aloud, the saved story text is transmitted via our server to
+            <strong> ElevenLabs&apos; text-to-speech API</strong> to generate a narrated audio file.
+            Only the story text is sent — no child audio, no drawings, no personal identifiers.
+            See ElevenLabs&apos; Privacy Policy at{" "}
+            <a href="https://elevenlabs.io/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
+              elevenlabs.io/privacy
             </a>.
           </p>
         </Section>
@@ -191,8 +192,9 @@ export default function PrivacyPage() {
           <p>
             AI requests are routed through our Cloudflare Workers server over HTTPS. The server
             authenticates each request using an anonymous device token (SHA-256 of your device&apos;s
-            vendor identifier — no personal information). API keys for Anthropic and OpenAI are
-            stored exclusively as server-side secrets and never transmitted to or stored on your device.
+            vendor identifier — no personal information). API keys for Anthropic, OpenAI, and
+            ElevenLabs are stored exclusively as server-side secrets and never transmitted to or
+            stored on your device.
           </p>
         </Section>
 
