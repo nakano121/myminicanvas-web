@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://myminicanvas.com/privacy" },
 };
 
-const LAST_UPDATED = "24 May 2026";
+const LAST_UPDATED = "4 June 2026";
 
 export default function PrivacyPage() {
   return (
@@ -89,8 +89,9 @@ export default function PrivacyPage() {
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Story Generation (optional)</h3>
           <p>
             When you generate a story, the drawing&apos;s title, the child&apos;s spoken transcript
-            (if provided), and a resized thumbnail of the drawing are transmitted via our server
-            to <strong>Anthropic&apos;s Claude API</strong>. The child&apos;s name is never transmitted.
+            (if provided), the parent&apos;s note (if provided), and a resized thumbnail of the
+            drawing are transmitted via our server to <strong>Anthropic&apos;s Claude API</strong>.
+            The child&apos;s name is never transmitted.
             See Anthropic&apos;s Privacy Policy at{" "}
             <a href="https://www.anthropic.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               anthropic.com/privacy
@@ -112,11 +113,11 @@ export default function PrivacyPage() {
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional)</h3>
           <p>
             When you use Read Aloud, the saved story text is transmitted via our server to
-            <strong> ElevenLabs&apos; text-to-speech API</strong> to generate a narrated audio file.
+            <strong> Google&apos;s Gemini text-to-speech API</strong> to generate a narrated audio file.
             Only the story text is sent — no child audio, no drawings, no personal identifiers.
-            See ElevenLabs&apos; Privacy Policy at{" "}
-            <a href="https://elevenlabs.io/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
-              elevenlabs.io/privacy
+            See Google&apos;s Privacy Policy at{" "}
+            <a href="https://policies.google.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
+              policies.google.com/privacy
             </a>.
           </p>
         </Section>
@@ -193,7 +194,7 @@ export default function PrivacyPage() {
             AI requests are routed through our Cloudflare Workers server over HTTPS. The server
             authenticates each request using an anonymous device token (SHA-256 of your device&apos;s
             vendor identifier — no personal information). API keys for Anthropic, OpenAI, and
-            ElevenLabs are stored exclusively as server-side secrets and never transmitted to or
+            Google are stored exclusively as server-side secrets and never transmitted to or
             stored on your device.
           </p>
         </Section>
