@@ -113,9 +113,14 @@ export default function PrivacyPage() {
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Read-Aloud (optional)</h3>
           <p>
             When you use Read Aloud, the saved story text is transmitted via our server to
-            <strong> Google&apos;s Gemini text-to-speech API</strong> to generate a narrated audio file.
+            <strong> ElevenLabs&apos; text-to-speech API</strong> (primary) or{" "}
+            <strong>Google&apos;s Gemini text-to-speech API</strong> (fallback) to generate a narrated audio file.
             Only the story text is sent — no child audio, no drawings, no personal identifiers.
-            See Google&apos;s Privacy Policy at{" "}
+            See ElevenLabs&apos; Privacy Policy at{" "}
+            <a href="https://elevenlabs.io/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
+              elevenlabs.io/privacy
+            </a>{" "}
+            and Google&apos;s Privacy Policy at{" "}
             <a href="https://policies.google.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               policies.google.com/privacy
             </a>.
