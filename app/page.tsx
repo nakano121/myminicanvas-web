@@ -196,8 +196,7 @@ function Hero() {
 
             {/* Subheadline */}
             <p className="animate-fade-slide-up delay-200 text-lg text-muted leading-relaxed max-w-[480px]">
-              My Mini Canvas captures your child&apos;s voice alongside every drawing —
-              then turns it into an illustrated storybook and a keepsake book.
+              My Mini Canvas turns your child&apos;s drawing into a personalised bedtime story and watercolour illustration — while capturing their voice alongside it.
               Privately. On your device. AI features are optional and always ask first.
             </p>
 

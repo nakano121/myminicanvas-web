@@ -25,18 +25,20 @@ export const metadata: Metadata = {
     template: "%s | My Mini Canvas",
   },
   description:
-    "The app that captures your child's drawings and the story behind them. Record their voice, generate bedtime stories, and preserve family memories — privately, on your device.",
+    "Turn your child's drawing into a personalised bedtime story and watercolour illustration in minutes. My Mini Canvas captures their voice, generates the story, and keeps every memory privately on your device.",
   keywords: [
+    "turn drawing into story",
+    "child drawing bedtime story",
+    "kids artwork story generator",
+    "photograph drawing story app",
+    "storybook maker",
+    "personalized kids story",
     "children drawing app",
-    "kids art memory app",
-    "capture kids artwork",
-    "toddler art app",
+    "toddler art keepsake",
     "family memory app",
-    "bedtime stories",
-    "kids drawing stories",
-    "preserve children art",
-    "children voice recording",
-    "family keepsake app",
+    "read aloud children",
+    "watercolor illustration kids",
+    "kids voice recording",
   ],
   openGraph: {
     type: "website",
@@ -96,7 +98,7 @@ export default function RootLayout({
                 availability: "https://schema.org/ComingSoon",
               },
               description:
-                "Capture children's drawings alongside their voice explanation. Turn art into bedtime stories. Keep every memory privately on your device.",
+                "Turn your child's drawing into a personalised bedtime story and watercolour illustration. Photograph the drawing, record their voice, and My Mini Canvas generates a bedtime story in minutes — privately on your device.",
               publisher: {
                 "@type": "Organization",
                 name: "GOODTECH HLDGS PTE. LTD.",
