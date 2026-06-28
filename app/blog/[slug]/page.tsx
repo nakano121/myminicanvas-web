@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { getAllPosts, getPost } from "@/lib/posts";
-import { WaitlistForm } from "@/components/WaitlistForm";
+import { AppStoreButton } from "@/components/AppStoreButton";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -80,9 +80,11 @@ export default async function BlogPostPage({ params }: Props) {
           </div>
           <h3 className="text-xl font-black mb-2">Ready to start keeping their stories?</h3>
           <p className="text-white/80 text-sm mb-6">
-            My Mini Canvas launches soon. Join the waitlist — free, one email when we&apos;re live.
+            My Mini Canvas is on iPhone and iPad now — free to start, no account needed.
           </p>
-          <WaitlistForm dark />
+          <div className="flex justify-center">
+            <AppStoreButton variant="light" />
+          </div>
         </div>
 
         {/* Back */}

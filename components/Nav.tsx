@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { APP_STORE_URL } from "@/lib/appStore";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
@@ -41,10 +42,12 @@ export function Nav() {
           <NavLink href="/support">Support</NavLink>
           <NavLink href="/privacy">Privacy</NavLink>
           <a
-            href="/#waitlist"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener"
             className="bg-coral text-white text-sm font-bold px-5 py-2.5 rounded-full hover:bg-coral-dark transition-colors shadow-sm shadow-coral/25 hover:shadow-md hover:shadow-coral/30"
           >
-            Get Early Access
+            Download
           </a>
         </div>
 
@@ -73,11 +76,13 @@ export function Nav() {
           <NavLink href="/support" onClick={() => setOpen(false)}>Support</NavLink>
           <NavLink href="/privacy" onClick={() => setOpen(false)}>Privacy</NavLink>
           <a
-            href="/#waitlist"
+            href={APP_STORE_URL}
+            target="_blank"
+            rel="noopener"
             onClick={() => setOpen(false)}
             className="bg-coral text-white text-sm font-bold px-5 py-3 rounded-full text-center hover:bg-coral-dark transition-colors"
           >
-            Get Early Access
+            Download
           </a>
         </div>
       )}

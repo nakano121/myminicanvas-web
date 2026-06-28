@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const FAQ = [
   {
     q: "Is My Mini Canvas available now?",
-    a: "We're launching on iPhone and iPad very soon. Join the waitlist at myminicanvas.com to be first to know.",
+    a: "Yes! My Mini Canvas is available now on the App Store for iPhone and iPad. It's free to download — search 'My Mini Canvas' or get it at apps.apple.com/app/id6772940851.",
   },
   {
     q: "Does the app require an internet connection?",

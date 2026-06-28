@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import { getAllPosts, type PostMeta } from "@/lib/posts";
-import { WaitlistForm } from "@/components/WaitlistForm";
+import { AppStoreButton } from "@/components/AppStoreButton";
+import { APP_STORE_URL } from "@/lib/appStore";
 import { AppPreview } from "@/components/AppPreview";
 
 export const metadata: Metadata = {
@@ -182,9 +183,9 @@ function Hero() {
           <div className="flex flex-col gap-7 lg:pr-8">
             {/* Badge */}
             <div className="animate-fade-slide-up">
-              <div className="inline-flex items-center gap-2 bg-honey/20 border border-honey/30 rounded-full px-4 py-1.5 text-sm font-medium">
-                <span className="w-2 h-2 rounded-full bg-honey animate-pulse" />
-                <span className="text-ink/70">Coming soon to iPhone &amp; iPad</span>
+              <div className="inline-flex items-center gap-2 bg-sage/15 border border-sage/30 rounded-full px-4 py-1.5 text-sm font-medium">
+                <span className="w-2 h-2 rounded-full bg-sage animate-pulse" />
+                <span className="text-ink/70">Now on iPhone &amp; iPad</span>
               </div>
             </div>
 
@@ -203,10 +204,12 @@ function Hero() {
             {/* CTAs */}
             <div className="animate-fade-slide-up delay-300 flex flex-col sm:flex-row gap-4 items-start">
               <a
-                href="#waitlist"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener"
                 className="bg-coral text-white font-bold text-base px-8 py-4 rounded-full hover:bg-coral-dark active:scale-95 transition-all shadow-lg shadow-coral/30 whitespace-nowrap"
               >
-                Save Their Story — It&apos;s Free
+                Download Free on the App Store
               </a>
               <a
                 href="#how-it-works"
@@ -733,7 +736,7 @@ function BlogPreview({ posts }: { posts: PostMeta[] }) {
 
 function FinalCTA() {
   return (
-    <section id="waitlist" className="py-28 px-6 bg-coral relative overflow-hidden">
+    <section id="download" className="py-28 px-6 bg-coral relative overflow-hidden">
       {/* Decorative blobs */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl translate-x-1/3 -translate-y-1/3 pointer-events-none" />
       <div className="absolute bottom-0 left-0 w-80 h-80 bg-ink/10 rounded-full blur-3xl -translate-x-1/4 translate-y-1/4 pointer-events-none" />
@@ -753,24 +756,16 @@ function FinalCTA() {
         </h2>
 
         <p className="text-white/75 text-lg leading-relaxed mb-10 max-w-xl mx-auto">
-          Right now, somewhere, they&apos;re drawing something extraordinary — and explaining it in a voice that won&apos;t sound like this forever. My Mini Canvas launches on iPhone and iPad soon. Join us — it&apos;s free, and one quiet email when we&apos;re ready.
+          Right now, somewhere, they&apos;re drawing something extraordinary — and explaining it in a voice that won&apos;t sound like this forever. My Mini Canvas is on iPhone and iPad today. Free to start, no account needed.
         </p>
 
-        <WaitlistForm dark />
+        <div className="flex justify-center">
+          <AppStoreButton variant="light" />
+        </div>
 
         <p className="mt-5 text-white/45 text-xs">
-          No spam. One email when we launch. Unsubscribe anytime.
+          Free to download. No account. Your memories stay on your device.
         </p>
-
-        <div className="mt-12 inline-flex items-center gap-3 bg-white/10 border border-white/20 rounded-2xl px-6 py-3.5">
-          <svg className="w-7 h-7 text-white" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
-          </svg>
-          <div className="text-left">
-            <p className="text-white/55 text-xs">Coming soon to the</p>
-            <p className="text-white font-bold text-sm tracking-wide">App Store</p>
-          </div>
-        </div>
       </div>
     </section>
   );
