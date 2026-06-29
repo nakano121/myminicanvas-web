@@ -38,7 +38,7 @@ const FAQ = [
   },
   {
     q: "Is the app COPPA compliant?",
-    a: "Yes. We never collect children's personal information. All data stays on your device. Voice is processed on-device using Apple's on-device speech recognition. See our Privacy Policy for full details.",
+    a: "Yes. We never collect children's personal information. Your drawings, voice recordings, and stories stay on your device, and voice is processed on-device using Apple's on-device speech recognition. (If the app crashes, an anonymous diagnostic with no personal information may be sent so we can fix it — see our Privacy Policy.)",
   },
   {
     q: "The app locked me out — what do I do?",

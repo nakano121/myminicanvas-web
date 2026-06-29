@@ -9,7 +9,7 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://myminicanvas.com/privacy" },
 };
 
-const LAST_UPDATED = "4 June 2026";
+const LAST_UPDATED = "29 June 2026";
 
 export default function PrivacyPage() {
   return (
@@ -83,7 +83,8 @@ export default function PrivacyPage() {
           <p>
             Our server holds no persistent user data — it processes each request and discards it.
             The only information retained is an anonymous per-device usage counter (no name,
-            no email, no account) used to enforce monthly rate limits.
+            no email, no account) used to enforce monthly rate limits, and — if the App crashes —
+            an anonymous crash diagnostic kept for at most 30 days (see section 8 below).
           </p>
 
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Story Generation (optional)</h3>
@@ -204,11 +205,22 @@ export default function PrivacyPage() {
           </p>
         </Section>
 
-        <Section title="8. Analytics and advertising">
+        <Section title="8. Analytics, advertising, and crash diagnostics">
           <p>
             My Mini Canvas contains no third-party analytics SDKs, advertising networks, or
             tracking libraries. We use no cookies, pixels, fingerprinting, or any other tracking
-            mechanism.
+            mechanism, and we do not track you across apps or websites.
+          </p>
+          <p>
+            To find and fix bugs that could affect your experience, the App uses Apple&apos;s
+            built-in <strong>MetricKit</strong> framework to send anonymous crash diagnostics
+            (a technical stack trace plus your device model and OS version) to our own server
+            when the App crashes. These reports contain <strong>no</strong> drawings, voice
+            recordings, stories, names, or any personal information, and they are
+            <strong> not linked to you or your device</strong> — each report uses a one-time
+            random identifier and cannot be tied back to you. Reports are retained for at most
+            30 days solely to diagnose crashes, and are never used for analytics, profiling,
+            advertising, or shared with anyone.
           </p>
         </Section>
 
