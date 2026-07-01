@@ -7,9 +7,9 @@ import { APP_STORE_URL } from "@/lib/appStore";
 import { AppPreview } from "@/components/AppPreview";
 
 export const metadata: Metadata = {
-  title: "My Mini Canvas — Little Art, Big Stories",
+  title: "My Mini Canvas — Turn Kids' Drawings Into Bedtime Stories",
   description:
-    "The app that captures your child's drawings and the story behind them. Record their voice, generate bedtime stories, and keep memories forever — privately on your device.",
+    "Turn your child's drawings into personalised bedtime stories and watercolour illustrations — a keepsake you'll actually keep. Record their voice, read it together tonight. Free, private, on your device.",
 };
 
 export default async function HomePage() {

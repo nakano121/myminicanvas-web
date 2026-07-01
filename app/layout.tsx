@@ -21,7 +21,7 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL("https://myminicanvas.com"),
   title: {
-    default: "My Mini Canvas — Little Art, Big Stories",
+    default: "My Mini Canvas — Turn Kids' Drawings Into Bedtime Stories",
     template: "%s | My Mini Canvas",
   },
   description:
@@ -35,6 +35,9 @@ export const metadata: Metadata = {
     "personalized kids story",
     "children drawing app",
     "toddler art keepsake",
+    "what to do with kids drawings",
+    "kids art keepsake ideas",
+    "how to save children's artwork",
     "family memory app",
     "read aloud children",
     "watercolor illustration kids",
