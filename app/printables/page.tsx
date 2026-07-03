@@ -96,9 +96,13 @@ export default function PrintablesPage() {
             <div className="draw-area mx-6 mb-4 flex-1 min-h-[260px] rounded-2xl border-2 border-dashed border-coral/30 flex items-end justify-center">
               <span className="print-hide text-coral/40 text-sm font-medium mb-3">draw here ✏️</span>
             </div>
-            <div className="px-6 pb-5 flex items-center justify-between text-xs">
-              <span className="text-muted/60">A drawing prompt from My Mini Canvas</span>
-              <span className="text-coral font-semibold">myminicanvas.com</span>
+            <div className="px-6 pb-5 flex items-end justify-between gap-4">
+              <div className="text-xs leading-snug">
+                <p className="font-semibold text-ink/80">Turn this drawing into a bedtime story</p>
+                <p className="text-muted/60 mt-0.5">Scan the code · myminicanvas.com</p>
+              </div>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/qr-create.svg" alt="Scan to make a bedtime story with My Mini Canvas" width={52} height={52} className="w-[52px] h-[52px] shrink-0" />
             </div>
           </div>
         ))}
