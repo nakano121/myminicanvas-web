@@ -31,6 +31,8 @@ export default function PrintablesPage() {
       <style>{`
         @media print {
           @page { margin: 1.4cm; }
+          /* hide the site chrome (Nav <header> + <footer>) and non-target cards */
+          header, footer { display: none !important; }
           .print-hide { display: none !important; }
           .pcard { display: none !important; }
           /* break the printed card out of the grid + max-width container */
@@ -73,7 +75,7 @@ export default function PrintablesPage() {
       </div>
 
       {/* Prompt cards — each is a button that prints itself */}
-      <div className="max-w-5xl mx-auto px-6 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+      <div className="cards-grid max-w-5xl mx-auto px-6 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {PROMPTS.map((p, i) => (
           <div
             key={p.title}
