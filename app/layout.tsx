@@ -43,6 +43,10 @@ export const metadata: Metadata = {
     "watercolor illustration kids",
     "kids voice recording",
   ],
+  other: {
+    // Pinterest site-claim verification
+    "p:domain_verify": "8c47f8bcdd7b992435f67c101643597a",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
