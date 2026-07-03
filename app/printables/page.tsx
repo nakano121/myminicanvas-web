@@ -1,21 +1,8 @@
-import type { Metadata } from "next";
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import { AppStoreButton } from "@/components/AppStoreButton";
-
-export const metadata: Metadata = {
-  // Keyword-rich for Pinterest/Google search (parents search these exact phrases).
-  title: "Free Drawing Prompts & Colouring Pages for Kids — My Mini Canvas",
-  description:
-    "Free printable drawing prompts and colouring pages for toddlers and preschoolers — perfect for rainy days. Then turn their drawing into a personalised bedtime story.",
-  alternates: { canonical: "https://myminicanvas.com/printables" },
-  openGraph: {
-    title: "Free Drawing Prompts for Little Artists",
-    description:
-      "Printable drawing prompts & colouring pages for kids — print, draw, then turn it into a bedtime story.",
-    url: "https://myminicanvas.com/printables",
-    type: "website",
-  },
-};
 
 const PROMPTS: { emoji: string; title: string; prompt: string }[] = [
   { emoji: "🐉", title: "A friendly monster", prompt: "Draw a monster who's actually very kind. What's its name? What does it eat for breakfast?" },
@@ -27,10 +14,32 @@ const PROMPTS: { emoji: string; title: string; prompt: string }[] = [
 ];
 
 export default function PrintablesPage() {
+  const [printing, setPrinting] = useState<number | null>(null);
+
+  function printCard(i: number) {
+    setPrinting(i);
+    // let the .print-me class apply before the print dialog reads styles
+    setTimeout(() => {
+      window.print();
+      setPrinting(null);
+    }, 60);
+  }
+
   return (
     <section className="bg-parchment">
-      {/* Hero (hidden when printing) */}
-      <div className="print:hidden relative overflow-hidden">
+      {/* print rules: show ONLY the tapped card, hide everything else */}
+      <style>{`
+        @media print {
+          .print-hide { display: none !important; }
+          .pcard { display: none !important; }
+          .pcard.print-me { display: flex !important; box-shadow: none !important; border: none !important; }
+          .pcard.print-me .draw-area { min-height: 60vh !important; }
+          @page { margin: 1.4cm; }
+        }
+      `}</style>
+
+      {/* Hero */}
+      <div className="print-hide relative overflow-hidden">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-honey/20 rounded-full blur-[140px] translate-x-1/3 -translate-y-1/3 pointer-events-none" />
         <div className="relative max-w-3xl mx-auto px-6 pt-20 pb-10 text-center">
           <h1 className="font-display text-4xl sm:text-5xl font-semibold text-ink leading-tight tracking-tight">
@@ -42,38 +51,41 @@ export default function PrintablesPage() {
             Then — the magic part — turn their drawing into a personalised bedtime story.
           </p>
           <p className="mt-4 text-sm text-muted/70">
-            Tap a card, then <strong>Print</strong> or <strong>Save as PDF</strong> for your little one. Free, forever.
+            <strong>Tap any card</strong> to print it (or save it as a PDF) for your little one. Free, forever.
           </p>
         </div>
       </div>
 
-      {/* Prompt cards */}
-      <div className="max-w-5xl mx-auto px-6 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-6 print:block print:px-0">
-        {PROMPTS.map((p) => (
-          <article
+      {/* Prompt cards — each is a button that prints itself */}
+      <div className="max-w-5xl mx-auto px-6 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
+        {PROMPTS.map((p, i) => (
+          <button
             key={p.title}
-            className="bg-white rounded-3xl border border-ink/8 shadow-sm overflow-hidden flex flex-col print:break-after-page print:border-0 print:shadow-none print:rounded-none"
+            type="button"
+            onClick={() => printCard(i)}
+            className={`pcard text-left bg-white rounded-3xl border border-ink/8 shadow-sm overflow-hidden flex flex-col cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 ${printing === i ? "print-me" : ""}`}
           >
-            <div className="px-6 pt-6 pb-4">
-              <div className="text-3xl mb-2" aria-hidden>{p.emoji}</div>
+            <div className="px-6 pt-6 pb-4 w-full">
+              <div className="flex items-start justify-between">
+                <div className="text-3xl mb-2" aria-hidden>{p.emoji}</div>
+                <span className="print-hide text-xs font-semibold text-coral bg-coral/10 rounded-full px-3 py-1">🖨️ Tap to print</span>
+              </div>
               <h2 className="font-display text-2xl font-semibold text-ink">{p.title}</h2>
               <p className="mt-2 text-muted leading-relaxed">{p.prompt}</p>
             </div>
-            {/* Draw-here area */}
-            <div className="mx-6 mb-4 flex-1 min-h-[260px] rounded-2xl border-2 border-dashed border-coral/30 flex items-end justify-center">
-              <span className="text-coral/40 text-sm font-medium mb-3">draw here ✏️</span>
+            <div className="draw-area mx-6 mb-4 flex-1 min-h-[260px] rounded-2xl border-2 border-dashed border-coral/30 flex items-end justify-center w-[calc(100%-3rem)]">
+              <span className="print-hide text-coral/40 text-sm font-medium mb-3">draw here ✏️</span>
             </div>
-            {/* Branded footer — travels onto every printed fridge sheet */}
-            <div className="px-6 pb-5 flex items-center justify-between text-xs">
-              <span className="text-muted/60">Made for {p.title.toLowerCase()} · My Mini Canvas</span>
+            <div className="px-6 pb-5 flex items-center justify-between text-xs w-full">
+              <span className="text-muted/60">A drawing prompt from My Mini Canvas</span>
               <span className="text-coral font-semibold">myminicanvas.com</span>
             </div>
-          </article>
+          </button>
         ))}
       </div>
 
-      {/* Funnel CTA (hidden when printing) */}
-      <div className="print:hidden bg-coral">
+      {/* Funnel CTA */}
+      <div className="print-hide bg-coral">
         <div className="max-w-2xl mx-auto px-6 py-16 text-center text-white">
           <h2 className="font-display text-3xl sm:text-4xl font-semibold leading-tight">
             Loved what they drew?
