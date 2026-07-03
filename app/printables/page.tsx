@@ -30,11 +30,27 @@ export default function PrintablesPage() {
       {/* print rules: show ONLY the tapped card, hide everything else */}
       <style>{`
         @media print {
+          @page { margin: 1.4cm; }
           .print-hide { display: none !important; }
           .pcard { display: none !important; }
-          .pcard.print-me { display: flex !important; box-shadow: none !important; border: none !important; }
-          .pcard.print-me .draw-area { min-height: 60vh !important; }
-          @page { margin: 1.4cm; }
+          /* break the printed card out of the grid + max-width container */
+          .cards-grid { display: block !important; max-width: none !important; margin: 0 !important; padding: 0 !important; gap: 0 !important; }
+          .pcard.print-me {
+            display: flex !important;
+            flex-direction: column !important;
+            width: 100% !important;
+            margin: 0 !important;
+            box-shadow: none !important;
+            border: none !important;
+            border-radius: 0 !important;
+          }
+          .pcard.print-me .draw-area {
+            height: 480px !important;   /* fixed, page-safe (no vh overflow) */
+            min-height: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            flex: none !important;
+          }
         }
       `}</style>
 

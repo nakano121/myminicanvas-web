@@ -428,7 +428,7 @@ function DrawScreen() {
   );
 }
 
-function PhoneFrame({ screen, key: _ }: { screen: Screen; key: string }) {
+function PhoneFrame({ screen }: { screen: Screen }) {
   return (
     <div className="relative w-[268px] mx-auto">
       <div className="absolute -bottom-6 left-1/2 -translate-x-1/2 w-40 h-5 bg-white/5 blur-2xl rounded-full" />
