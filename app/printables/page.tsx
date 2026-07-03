@@ -59,28 +59,30 @@ export default function PrintablesPage() {
       {/* Prompt cards — each is a button that prints itself */}
       <div className="max-w-5xl mx-auto px-6 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {PROMPTS.map((p, i) => (
-          <button
+          <div
             key={p.title}
-            type="button"
+            role="button"
+            tabIndex={0}
             onClick={() => printCard(i)}
-            className={`pcard text-left bg-white rounded-3xl border border-ink/8 shadow-sm overflow-hidden flex flex-col cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 ${printing === i ? "print-me" : ""}`}
+            onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); printCard(i); } }}
+            className={`pcard bg-white rounded-3xl border border-ink/8 shadow-sm overflow-hidden flex flex-col cursor-pointer transition-all hover:shadow-lg hover:-translate-y-0.5 ${printing === i ? "print-me" : ""}`}
           >
-            <div className="px-6 pt-6 pb-4 w-full">
-              <div className="flex items-start justify-between">
-                <div className="text-3xl mb-2" aria-hidden>{p.emoji}</div>
-                <span className="print-hide text-xs font-semibold text-coral bg-coral/10 rounded-full px-3 py-1">🖨️ Tap to print</span>
+            <div className="px-6 pt-6 pb-4">
+              <div className="flex items-start justify-between gap-3">
+                <div className="text-3xl" aria-hidden>{p.emoji}</div>
+                <span className="print-hide text-xs font-semibold text-coral bg-coral/10 rounded-full px-3 py-1 whitespace-nowrap">🖨️ Tap to print</span>
               </div>
-              <h2 className="font-display text-2xl font-semibold text-ink">{p.title}</h2>
+              <h2 className="font-display text-2xl font-semibold text-ink mt-2">{p.title}</h2>
               <p className="mt-2 text-muted leading-relaxed">{p.prompt}</p>
             </div>
-            <div className="draw-area mx-6 mb-4 flex-1 min-h-[260px] rounded-2xl border-2 border-dashed border-coral/30 flex items-end justify-center w-[calc(100%-3rem)]">
+            <div className="draw-area mx-6 mb-4 flex-1 min-h-[260px] rounded-2xl border-2 border-dashed border-coral/30 flex items-end justify-center">
               <span className="print-hide text-coral/40 text-sm font-medium mb-3">draw here ✏️</span>
             </div>
-            <div className="px-6 pb-5 flex items-center justify-between text-xs w-full">
+            <div className="px-6 pb-5 flex items-center justify-between text-xs">
               <span className="text-muted/60">A drawing prompt from My Mini Canvas</span>
               <span className="text-coral font-semibold">myminicanvas.com</span>
             </div>
-          </button>
+          </div>
         ))}
       </div>
 
