@@ -36,6 +36,21 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "yearly",
       priority: 0.3,
     },
+    {
+      url: "https://myminicanvas.com/printables/",
+      changeFrequency: "monthly",
+      priority: 0.8,
+    },
+    {
+      url: "https://myminicanvas.com/create/",
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: "https://myminicanvas.com/support/",
+      changeFrequency: "monthly",
+      priority: 0.4,
+    },
     ...blogEntries,
   ];
 }
