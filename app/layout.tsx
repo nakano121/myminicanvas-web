@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   description:
     "Turn your child's drawing into a personalised bedtime story and watercolour illustration in minutes. My Mini Canvas captures their voice, generates the story, and keeps every memory privately on your device.",
   keywords: [
+    "minicanvas",
+    "mini canvas app",
+    "minicanvas ai",
+    "my mini canvas",
     "turn drawing into story",
     "child drawing bedtime story",
     "kids artwork story generator",
@@ -96,13 +100,16 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "SoftwareApplication",
               name: "My Mini Canvas",
+              alternateName: ["MiniCanvas", "Mini Canvas", "MiniCanvas AI", "My MiniCanvas"],
               operatingSystem: "iOS",
               applicationCategory: "LifestyleApplication",
+              installUrl: "https://apps.apple.com/app/id6772940851",
+              sameAs: ["https://apps.apple.com/app/id6772940851"],
               offers: {
                 "@type": "Offer",
                 price: "0",
                 priceCurrency: "USD",
-                availability: "https://schema.org/ComingSoon",
+                availability: "https://schema.org/InStock",
               },
               description:
                 "Turn your child's drawing into a personalised bedtime story and watercolour illustration. Photograph the drawing, record their voice, and My Mini Canvas generates a bedtime story in minutes — privately on your device.",
