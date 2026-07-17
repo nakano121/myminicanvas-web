@@ -16,6 +16,19 @@ export function Footer() {
             <p className="text-sm leading-relaxed max-w-xs">
               Capture the story behind every drawing. Record their voice. Build memories that last.
             </p>
+            <a
+              href="https://www.instagram.com/myminicanvas.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 mt-4 text-sm hover:text-coral transition-colors"
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
+                <rect x="2.5" y="2.5" width="19" height="19" rx="5.5" />
+                <circle cx="12" cy="12" r="4.5" />
+                <circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none" />
+              </svg>
+              @myminicanvas.app
+            </a>
             <p className="text-xs mt-4 text-white/35">
               A product by{" "}
               <span className="text-white/50">GOODTECH HLDGS PTE. LTD.</span>

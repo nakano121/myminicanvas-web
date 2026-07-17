@@ -104,7 +104,10 @@ export default function RootLayout({
               operatingSystem: "iOS",
               applicationCategory: "LifestyleApplication",
               installUrl: "https://apps.apple.com/app/id6772940851",
-              sameAs: ["https://apps.apple.com/app/id6772940851"],
+              sameAs: [
+                "https://apps.apple.com/app/id6772940851",
+                "https://www.instagram.com/myminicanvas.app/",
+              ],
               offers: {
                 "@type": "Offer",
                 price: "0",
