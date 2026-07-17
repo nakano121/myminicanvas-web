@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "A child drew something. It became a story.",
     description:
       "Turn your little one's drawing into a personalised bedtime story and a watercolour illustration — free, on your device.",
-    url: "https://myminicanvas.com/create",
+    url: "https://myminicanvas.com/create/",
     type: "website",
   },
 };

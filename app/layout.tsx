@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://myminicanvas.com",
+    url: "https://myminicanvas.com/",
     siteName: "My Mini Canvas",
     title: "My Mini Canvas — Little Art, Big Stories",
     description:

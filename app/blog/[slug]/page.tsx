@@ -115,7 +115,7 @@ export default async function BlogPostPage({ params }: Props) {
               name: "GOODTECH HLDGS PTE. LTD.",
               url: "https://myminicanvas.com",
             },
-            mainEntityOfPage: `https://myminicanvas.com/blog/${slug}`,
+            mainEntityOfPage: `https://myminicanvas.com/blog/${slug}/`,
           }),
         }}
       />

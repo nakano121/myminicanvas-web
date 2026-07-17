@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     title: "Free Drawing Prompts for Little Artists",
     description:
       "Printable drawing prompts & colouring pages for kids — print, draw, then turn it into a bedtime story.",
-    url: "https://myminicanvas.com/printables",
+    url: "https://myminicanvas.com/printables/",
     type: "website",
   },
 };

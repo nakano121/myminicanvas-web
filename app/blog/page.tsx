@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     title: "My Mini Canvas Blog — Little Art, Big Stories",
     description:
       "Thoughtful articles for parents who love capturing the little moments.",
-    url: "https://myminicanvas.com/blog",
+    url: "https://myminicanvas.com/blog/",
   },
   alternates: { canonical: "https://myminicanvas.com/blog/" },
 };
