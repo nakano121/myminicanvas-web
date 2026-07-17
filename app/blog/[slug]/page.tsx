@@ -27,10 +27,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       title: post.title,
       description: post.excerpt,
       type: "article",
-      url: `https://myminicanvas.com/blog/${slug}`,
+      url: `https://myminicanvas.com/blog/${slug}/`,
       publishedTime: post.date,
     },
-    alternates: { canonical: `https://myminicanvas.com/blog/${slug}` },
+    alternates: { canonical: `https://myminicanvas.com/blog/${slug}/` },
   };
 }
 

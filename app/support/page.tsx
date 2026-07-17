@@ -4,7 +4,7 @@ export const metadata: Metadata = {
   title: "Support",
   description:
     "Get help with My Mini Canvas — FAQ, troubleshooting, and contact information.",
-  alternates: { canonical: "https://myminicanvas.com/support" },
+  alternates: { canonical: "https://myminicanvas.com/support/" },
 };
 
 const FAQ = [

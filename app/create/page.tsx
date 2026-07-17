@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   title: "Make your own — My Mini Canvas",
   description:
     "Someone turned their child's drawing into a personalised bedtime story and a watercolour illustration. Make your own tonight — free, private, no account.",
-  alternates: { canonical: "https://myminicanvas.com/create" },
+  alternates: { canonical: "https://myminicanvas.com/create/" },
   openGraph: {
     title: "A child drew something. It became a story.",
     description:

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
       "Thoughtful articles for parents who love capturing the little moments.",
     url: "https://myminicanvas.com/blog",
   },
-  alternates: { canonical: "https://myminicanvas.com/blog" },
+  alternates: { canonical: "https://myminicanvas.com/blog/" },
 };
 
 const CATEGORIES = [

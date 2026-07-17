@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Terms of Service",
   description: "My Mini Canvas Terms of Service — your rights and responsibilities when using the app.",
-  alternates: { canonical: "https://myminicanvas.com/terms" },
+  alternates: { canonical: "https://myminicanvas.com/terms/" },
 };
 
 const LAST_UPDATED = "23 May 2026";

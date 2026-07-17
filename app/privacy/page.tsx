@@ -6,7 +6,7 @@ export const metadata: Metadata = {
   description:
     "My Mini Canvas Privacy Policy — how we protect your family's data. GDPR, COPPA, CCPA, and PDPA compliant.",
   robots: { index: true, follow: true },
-  alternates: { canonical: "https://myminicanvas.com/privacy" },
+  alternates: { canonical: "https://myminicanvas.com/privacy/" },
 };
 
 const LAST_UPDATED = "29 June 2026";
