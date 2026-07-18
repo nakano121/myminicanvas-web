@@ -29,6 +29,7 @@ export interface PostMeta {
 
 export interface Post extends PostMeta {
   content: string;
+  disclaimer?: "development" | "policies";
 }
 
 export async function getAllPosts(): Promise<PostMeta[]> {
@@ -71,5 +72,6 @@ export async function getPost(slug: string): Promise<Post | null> {
     readTime: data.readTime ?? "5 min read",
     image: data.image ?? CATEGORY_IMAGES[category] ?? CATEGORY_IMAGES["Parenting & Art"],
     content,
+    disclaimer: data.disclaimer === "development" || data.disclaimer === "policies" ? data.disclaimer : undefined,
   };
 }

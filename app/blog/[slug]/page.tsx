@@ -71,6 +71,17 @@ export default async function BlogPostPage({ params }: Props) {
           <MDXRemote source={post.content} />
         </div>
 
+        {/* Disclaimer */}
+        {post.disclaimer && (
+          <div className="mt-12 border-l-4 border-honey/70 bg-honey-light/50 rounded-r-2xl px-6 py-5">
+            <p className="text-ink/70 text-sm leading-relaxed italic">
+              {post.disclaimer === "development"
+                ? "A gentle note from us: we're parents and makers, not paediatricians. Every child is wonderfully their own, and they grow at their own pace. If something about your little one's development is weighing on your heart, please have a chat with your family doctor — that's exactly what they're there for, and asking is always the right call."
+                : "A gentle note from us: privacy policies change over time. We checked everything here against the providers' published terms when we wrote it — but before you trust any tool (ours included) with your family's treasures, take a moment to read their current policy. You deserve to know exactly where your child's art goes."}
+            </p>
+          </div>
+        )}
+
         {/* CTA */}
         <div className="mt-16 bg-coral rounded-3xl p-8 text-center text-white">
           <div className="flex justify-center mb-3">
