@@ -72,8 +72,8 @@ export default function TermsPage() {
 
         <Section title="5. Third-party services">
           <p>
-            The App&apos;s optional AI features rely on third-party APIs (Anthropic Claude, OpenAI),
-            accessed via our Cloudflare Workers server. Your use of these features is governed by
+            The App&apos;s optional AI features rely on third-party APIs (Anthropic Claude, OpenAI,
+            Google Gemini, and ElevenLabs), accessed via our Cloudflare Workers server. Your use of these features is governed by
             the respective providers&apos; terms of service and privacy policies. We are not responsible
             for the actions, content, or policies of third-party services.
           </p>

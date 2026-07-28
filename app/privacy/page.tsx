@@ -102,12 +102,17 @@ export default function PrivacyPage() {
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI Illustration Generation (optional)</h3>
           <p>
             When you generate an illustration, a text prompt derived from the drawing title and
-            story is transmitted via our server to <strong>OpenAI&apos;s image generation API</strong>.
+            story is transmitted via our server to <strong>OpenAI&apos;s image generation API</strong> (primary)
+            or <strong>Google&apos;s Gemini image generation API</strong> (fallback, used when OpenAI is unavailable).
             No drawing image, no child audio, and no personal identifiers are transmitted. The
             generated image is reviewed by the parent before saving to the device. See OpenAI&apos;s
             Privacy Policy at{" "}
             <a href="https://openai.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
               openai.com/privacy
+            </a>{" "}
+            and Google&apos;s Privacy Policy at{" "}
+            <a href="https://policies.google.com/privacy" className="text-coral underline" target="_blank" rel="noopener noreferrer">
+              policies.google.com/privacy
             </a>.
           </p>
 
