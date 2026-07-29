@@ -38,6 +38,7 @@ export function Nav() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
+          <NavLink href="/printables">Free Printables</NavLink>
           <NavLink href="/blog">Blog</NavLink>
           <NavLink href="/support">Support</NavLink>
           <NavLink href="/privacy">Privacy</NavLink>
@@ -72,6 +73,7 @@ export function Nav() {
       {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-parchment/98 backdrop-blur-md border-t border-ink/5 px-6 py-5 flex flex-col gap-5">
+          <NavLink href="/printables" onClick={() => setOpen(false)}>Free Printables</NavLink>
           <NavLink href="/blog" onClick={() => setOpen(false)}>Blog</NavLink>
           <NavLink href="/support" onClick={() => setOpen(false)}>Support</NavLink>
           <NavLink href="/privacy" onClick={() => setOpen(false)}>Privacy</NavLink>
