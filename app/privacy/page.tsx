@@ -69,8 +69,11 @@ export default function PrivacyPage() {
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">Draw Together (optional feature)</h3>
           <p>
             The App includes a built-in drawing canvas powered by Apple&apos;s PencilKit framework.
-            Drawings created on this canvas are stored only on your device and are never transmitted
-            to any external service. PencilKit processing is entirely on-device.
+            Drawings created on this canvas are stored only on your device, and PencilKit drawing
+            and rendering happen entirely on-device. A drawing only ever leaves your device if you
+            choose to generate a story from it — see &quot;AI features&quot; below for exactly what is
+            sent, and note that a resized, metadata-stripped copy is used only to create your story,
+            never stored on our servers or used to train AI.
           </p>
 
           <h3 className="font-bold text-ink text-lg mt-4 mb-2">AI features — how they work</h3>

@@ -430,7 +430,7 @@ function Features() {
             Saved forever.
           </h2>
           <p className="mt-5 text-muted text-lg max-w-lg mx-auto leading-relaxed">
-            From the crayon in their hand to a storybook on your shelf — every step happens on your device, privately, just for your family.
+            From the crayon in their hand to a storybook on your shelf — kept privately on your device, just for your family. AI creation is optional, runs only when you ask, and never trains on your child&apos;s art.
           </p>
         </div>
 

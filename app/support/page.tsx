@@ -18,7 +18,7 @@ const FAQ = [
   },
   {
     q: "Where is my data stored?",
-    a: "Drawings, voice recordings, stories, and illustrations are stored on your device only. Optional AI features route the minimum necessary text through our secure server — never your drawings or audio. We have no persistent access to your content.",
+    a: "Drawings, voice recordings, stories, and illustrations are stored on your device only. Optional AI features send just the minimum, and only when you tap to create: a resized, metadata-stripped copy of the drawing (to write the story) and the story text (to illustrate and read aloud). Your voice audio never leaves the device — it's transcribed on-device — and your child's name is never sent. Nothing is stored on our servers or used to train AI, and we have no persistent access to your content.",
   },
   {
     q: "Do I need to create an account?",
@@ -26,7 +26,7 @@ const FAQ = [
   },
   {
     q: "How does the AI story generation work?",
-    a: "When you tap 'Create Story', the drawing's title and your child's voice transcription (but never their name) is sent via our secure server to Anthropic's Claude AI. The story is returned for you to review. Once you save it, an illustration is painted automatically — no second tap needed. Everything is saved locally on your device. No API key required — we handle that.",
+    a: "When you tap 'Create Story', a resized, metadata-stripped copy of the drawing and your child's voice transcription (but never their name) are sent via our secure server to Anthropic's Claude AI. The story is returned for you to review. Once you save it, an illustration is painted automatically from the story text — no second tap needed. Everything is saved locally on your device, and nothing is stored on our servers or used to train AI. No API key required — we handle that.",
   },
   {
     q: "Do I need my own API key?",
