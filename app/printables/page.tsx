@@ -127,13 +127,26 @@ function ColButterfly() {
   );
 }
 
-const COLOURING: { emoji: string; title: string; art: React.ReactNode }[] = [
+const COLOURING: { emoji: string; title: string; art?: React.ReactNode; img?: string }[] = [
   { emoji: "☀️", title: "Sunny day", art: <ColSun /> },
   { emoji: "🏠", title: "My little house", art: <ColHouse /> },
   { emoji: "🚀", title: "Rocket to space", art: <ColRocket /> },
   { emoji: "🐟", title: "Happy little fish", art: <ColFish /> },
   { emoji: "🌸", title: "Big bright flower", art: <ColFlower /> },
   { emoji: "🦋", title: "Butterfly", art: <ColButterfly /> },
+  // Kawaii animal line-art (raster). Generated 1024² line art, printed at object-contain.
+  { emoji: "🐱", title: "Cuddly cat", img: "cat.png" },
+  { emoji: "🐶", title: "Happy puppy", img: "dog.png" },
+  { emoji: "🐰", title: "Bunny & carrot", img: "bunny.png" },
+  { emoji: "🦆", title: "Little duckling", img: "duck.png" },
+  { emoji: "🐮", title: "Baby cow", img: "cow.png" },
+  { emoji: "🐑", title: "Fluffy sheep", img: "sheep.png" },
+  { emoji: "🦁", title: "Little lion", img: "lion.png" },
+  { emoji: "🐘", title: "Baby elephant", img: "elephant.png" },
+  { emoji: "🐠", title: "Bubbly fish", img: "fish.png" },
+  { emoji: "🦋", title: "Fluttery butterfly", img: "butterfly.png" },
+  { emoji: "🦖", title: "Baby dinosaur", img: "dinosaur.png" },
+  { emoji: "🦄", title: "Magic unicorn", img: "unicorn.png" },
 ];
 
 export default function PrintablesPage() {
@@ -264,7 +277,10 @@ export default function PrintablesPage() {
                 <p className="print-hide mt-1 text-sm text-muted">Colour it in — then bring it to life.</p>
               </div>
               <div className="draw-area mx-6 mb-4 flex-1 min-h-[260px] rounded-2xl border border-ink/5 flex items-center justify-center p-5">
-                {c.art}
+                {c.img ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={`/colouring/${c.img}`} alt={`${c.title} colouring page`} className="w-full h-full object-contain" />
+                ) : c.art}
               </div>
               <div className="px-6 pb-5 flex items-end justify-between gap-4">
                 <div className="text-xs leading-snug">
