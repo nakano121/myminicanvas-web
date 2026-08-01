@@ -252,9 +252,18 @@ export default function PrintablesPage() {
       </div>
 
       {/* Section: Colouring pages */}
-      <div className="print-hide max-w-5xl mx-auto px-6 pt-8 pb-3">
-        <h2 className="font-display text-2xl font-semibold text-ink">Colouring pages</h2>
-        <p className="text-muted text-sm mt-1">Prefer to colour? Print a ready-made outline and hand over the crayons.</p>
+      <div className="print-hide max-w-5xl mx-auto px-6 pt-8 pb-3 flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <h2 className="font-display text-2xl font-semibold text-ink">Colouring pages</h2>
+          <p className="text-muted text-sm mt-1">Prefer to colour? Print a ready-made outline and hand over the crayons.</p>
+        </div>
+        <a
+          href="/animal-colouring-pages.pdf"
+          download
+          className="shrink-0 inline-flex items-center gap-2 text-sm font-semibold text-white bg-coral rounded-full px-4 py-2.5 shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all"
+        >
+          ⬇ Download all 12 animals (PDF)
+        </a>
       </div>
       <div className="cards-grid max-w-5xl mx-auto px-6 pb-8 grid grid-cols-1 sm:grid-cols-2 gap-6">
         {COLOURING.map((c, i) => {
